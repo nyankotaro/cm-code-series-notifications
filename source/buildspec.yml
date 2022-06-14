@@ -1,0 +1,9 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - aws deploy push --application-name code-dev-codedeploy --s3-location s3://your_s3/artifact`date "+%Y%m%d-%H%M"`.zip --source src
+artifacts:
+  files:
+    - '**/*'
+  base-directory: src
